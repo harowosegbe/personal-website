@@ -5,27 +5,26 @@ import { themeEffect } from "./theme-effect";
 import { Analytics } from "./analytics";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import { doge } from "./doge";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Guillermo Rauch's blog",
+  title: "Hammed Arowosegbe",
   description:
-    "Guillermo Rauch is the CEO and founder of Vercel, a software engineer, and the creator of Next.js, Mongoose, Socket.io and other open source libraries.",
+    "Hammed Arowosegbe is a Senior Software Engineer and creator of SwiftXR, specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
   openGraph: {
     title: "Guillermo Rauchg's blog",
     description:
-      "Guillermo Rauch is the CEO and founder of Vercel, a software engineer, and the creator of Next.js, Mongoose, Socket.io and other open source libraries.",
-    url: "https://rauchg.com",
-    siteName: "Guillermo Rauchg's blog",
+      "Hammed Arowosegbe is a Senior Software Engineer and creator of SwiftXR, specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
+    url: "https://hammedarowosegbe.com",
+    siteName: "Hammed Arowosegbe",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@rauchg",
-    creator: "@rauchg",
+    site: "@HammedArrow",
+    creator: "@HammedArrow",
   },
-  metadataBase: new URL("https://rauchg.com"),
+  metadataBase: new URL("https://hammedarowosegbe.com"),
 };
 
 export const viewport = {
@@ -46,7 +45,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(${themeEffect.toString()})();(${doge.toString()})();`,
+            __html: `(${themeEffect.toString()})();`,
           }}
         />
       </head>

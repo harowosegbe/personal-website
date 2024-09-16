@@ -34,6 +34,7 @@ export function Posts({ posts: initialPosts }) {
     <Suspense fallback={null}>
       <main className="max-w-2xl font-mono m-auto mb-10 text-sm">
         <header className="text-gray-500 dark:text-gray-600 flex items-center text-xs">
+
           <button
             onClick={sortDate}
             className={`w-12 h-9 text-left  ${
@@ -45,22 +46,9 @@ export function Posts({ posts: initialPosts }) {
             date
             {sort[0] === "date" && sort[1] === "asc" && "↑"}
           </button>
+
           <span className="grow pl-2">title</span>
-          <button
-            onClick={sortViews}
-            className={`
-                  h-9
-                  pl-4
-                  ${
-                    sort[0] === "views"
-                      ? "text-gray-700 dark:text-gray-400"
-                      : ""
-                  }
-                `}
-          >
-            views
-            {sort[0] === "views" ? (sort[1] === "asc" ? "↑" : "↓") : ""}
-          </button>
+
         </header>
 
         <List posts={posts} sort={sort} />
@@ -95,7 +83,10 @@ function List({ posts, sort }) {
 
         return (
           <li key={post.id}>
-            <Link href={`/${new Date(post.date).getFullYear()}/${post.id}`}>
+            <Link 
+            // href={`/${new Date(post.date).getFullYear()}/${post.id}`}
+            href={"#"}
+            >
               <span
                 className={`flex transition-[background-color] hover:bg-gray-100 dark:hover:bg-[#242424] active:bg-gray-200 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
                 ${!firstOfYear ? "border-t-0" : ""}
@@ -115,9 +106,6 @@ function List({ posts, sort }) {
 
                   <span className="grow dark:text-gray-100">{post.title}</span>
 
-                  <span className="text-gray-500 dark:text-gray-500 text-xs">
-                    {post.viewsFormatted}
-                  </span>
                 </span>
               </span>
             </Link>
