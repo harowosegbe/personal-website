@@ -13,7 +13,7 @@ export const metadata = {
   description:
     "Hammed Arowosegbe is a Senior Software Engineer and creator of SwiftXR, specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
   openGraph: {
-    title: "Guillermo Rauchg's blog",
+    title: "Hammed Arowosegbe",
     description:
       "Hammed Arowosegbe is a Senior Software Engineer and creator of SwiftXR, specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
     url: "https://hammedarowosegbe.com",
