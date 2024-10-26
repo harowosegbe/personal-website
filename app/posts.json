@@ -3,27 +3,62 @@
     {
       "id": "innovations-in-cad",
       "date": "December 2023",
-      "title": "Innovations in CAD and Physical Simulations"
+      "title": "Developed a CAD engine for a solar rooftop platform that optimizes panel placement using real-time environmental data. This improved both the design speed and accuracy by leveraging geographical and azimuth calculations."
     },
     {
       "id": "creating-no-code-arvr",
       "date": "June 2021",
-      "title": "Creating No-Code AR/VR Platforms"
+      "title": "Pioneered the development SwiftXR to provide affordable AR/VR solutions for global businesses. Further expanded services by streamlining development for specific industries, accelerating XR adoption in sectors like e-commerce and interior design."
     },
     {
       "id": "blockchain-based-metaverses",
       "date": "November 2021",
-      "title": "Advancements in Blockchain-based Metaverses"
+      "title": "Collaborated with developers at VaultHill to create a cross-platform multiplayer VR game that focused on immersive design. Additionally contributed to the designed of a Web3D metaverse map for VaultHill to simplify the transactions of virtual lands as NFTs. "
     },
     {
       "id": "optimizing-mobile-ar",
       "date": "October 2019",
-      "title": "Optimizing Mobile AR Experiences"
+      "title": "Engineered and delivered a mobile AR project for virtual footwear try-ons, boosting sales and ROI. Designed and developed a 3D virtual city model that simplified urban planning. Additionally worked on VR training apps for HSE, which made a real impact on safety and helped reduce incidents."
     },
     {
-      "id": "xr-training-methodologies",
-      "date": "March 2022",
-      "title": "XR Training Methodologies and Impact"
+      "id": "interractive-fashion-experience",
+      "date": "March 2024",
+      "title": "Worked with Experience to develop a Web3D and Augmented reality application for L'Oréal that lets users unleash their creativity, enabling them design their own unique hair artistry. It's a fun and interactive platform where users can experiment with styles and express themselves in exciting ways."
+    },
+    {
+      "id": "banking-chatbot",
+      "date": "March 2023",
+      "title": "Worked with Experience to create an immersive digital experience for Lloyds Banking Group, incorporating an AI chatbot within a mobile trailer to engage students on campuses. We targeted modular and scalable solutions for wider reach, which resulted in engagements with over 11,000 students."
+    },
+    {
+      "id": "VR-Experience",
+      "date": "March 2021",
+      "title": "Designed and developed a 360 VR experience for 'Wondaland', an album released by Nigerian artist Teni, reflecting her physical tour in a virtual space, allowing fans to explore the album's themes through an immersive, interactive experience."
+    },
+    {
+      "id": "Mastercard",
+      "date": "July 2022",
+      "title": "Developed a Mastercard spend and win app for their activation campaign that let users enter a raffle draw for a chance to win exciting items. This fun feature got users excited and made shopping interesting, with users eagerly participating for a chance to win."
+    },
+    {
+      "id": "Web-AR",
+      "date": "May 2021",
+      "title": "Developed a WebAR experience for Marriott hotels Ikeja that lets users explore destinations in augmented reality. By streamlining interactions with immersive visuals, there was a boosted engagement which enhanced Marriott's digital presence."
+    },
+    {
+      "id": "Simulation-environment",
+      "date": "March 2018",
+      "title": "Designed and developed a 3D seaport-ocean environment for a ship-steering simulator at OCI automation. Additionally, developed a real-time 3D rail-track switching system and a high-fidelity 3D interface for a train driving simulator, enhancing immersion and overall user experience."
+    },
+    {
+      "id": "XR-instructor",
+      "date": "January 2019",
+      "title": "Led a team in building a web-based AR application that simulates engineering machine operations, enhancing students' understanding of machine parts. Further developed an XR training curriculum that aided over 20 students with portfolio projects to showcase their skills."
+    },
+    {
+      "id": "AR-Glasses",
+      "date": "June 2024",
+      "title": "Built a smart glasses application in Nigeria that shows real-time subtitles of what's being said, making it easier for people with hearing impairments or difficulty hearing to follow conversations. The glasses also offer adjustable text options and use voice recognition to improve communication."
     }
   ]
 }
