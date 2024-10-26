@@ -37,11 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-  return (
-    <h1>
-      Currently cooking, kindly check back later.
-    </h1>
-  )
+  // return (
+  //   <h1>
+  //     Currently cooking, kindly check back later.
+  //   </h1>
+  // )
   
   return (
     <html
