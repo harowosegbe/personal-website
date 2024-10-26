@@ -11,11 +11,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Hammed Arowosegbe",
   description:
-    "Hammed Arowosegbe is a Senior Software Engineer and creator of SwiftXR, specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
+    "Hammed Arowosegbe is a Senior Software Engineer specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
   openGraph: {
     title: "Hammed Arowosegbe",
     description:
-      "Hammed Arowosegbe is a Senior Software Engineer and creator of SwiftXR, specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
+      "Hammed Arowosegbe is a Senior Software Engineer specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
     url: "https://hammedarowosegbe.com",
     siteName: "Hammed Arowosegbe",
   },
