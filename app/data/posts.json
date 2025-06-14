@@ -1,0 +1,202 @@
+{
+  "posts": [
+    {
+      "id": "glo-ai-kinect",
+      "date": "February 2025",
+      "title": "Glo AI Chatbot & Motion Interactive Wall",
+      "summary": "Led a team to create an interactive AI-driven experience for Glo, combining a conversational chatbot with Kinect-powered motion graphics to engage users in real time at brand activations.",
+      "description": "Developed an immersive installation for Glo that fused conversational AI with motion-tracked visuals. Users interacted with an on-screen chatbot powered by natural language understanding, while Kinect sensors translated their physical gestures into dynamic visual effects on a large display. The experience attracted high footfall at events, offering an intuitive and memorable way for users to engage with Glo's brand and services. It blended tech and storytelling into a seamless digital encounter.",
+      "technologies": ["Kinect", "Unity", "C#", "Node.js", "WebSocket", "Express", "AI", "Next.js", "Typescript"],
+      "duration": "2 month",
+      "video": "/video/glo-ai-kinect-demo.mp4",
+      "gallery": [
+        "/images/glo-ai-kinect-1.jpg",
+        "/images/glo-ai-kinect-2.jpg"
+      ]
+    },
+    {
+      "id": "innovations-in-cad",
+      "date": "December 2023",
+      "title": "Solar Panel CAD Engine",
+      "summary": "Developed a CAD engine for a solar rooftop platform that optimizes panel placement using real-time environmental data. This improved both the design speed and accuracy by leveraging geographical and azimuth calculations.",
+      "description": "Led the development of an advanced CAD engine specifically designed for solar rooftop installations. The system incorporates real-time environmental data, shading calculations, and roof geometry optimization. Key features include automated panel placement algorithms, energy output predictions, and 3D visualization capabilities. The solution significantly reduced design time while improving accuracy and energy efficiency of installations.",
+      "technologies": ["Three.js", "WebGL", "Next.js", "Typescript", "AI"],
+      "duration": "6 months",
+      "video": "/images/aether-solar-cad.mp4",
+      "gallery": [
+        "/images/aether-solar-cad-1.jpg",
+        "/images/aether-solar-cad-2.jpg"
+      ]
+    },
+    {
+      "id": "creating-no-code-arvr",
+      "date": "June 2021",
+      "title": "SwiftXR: No-Code AR/VR Creation Platform",
+      "summary": "Pioneered the development SwiftXR to provide affordable AR/VR solutions for global businesses. Further expanded services by streamlining development for specific industries, accelerating XR adoption in sectors like e-commerce and interior design.",
+      "description": "Created SwiftXR, a simple no-code platform that democratizes AR/VR development. The platform enables businesses to create immersive experiences without extensive technical knowledge. Specialized solutions were developed for e-commerce, allowing virtual product try-ons, and interior design, enabling virtual room visualization. The platform's success led to rapid adoption across multiple industries and significant cost savings for clients.",
+      "technologies": ["Three.js", "A-Frame", "React.js", "Node.js", "Express", "Typescript", "MongoDB"],
+      "duration": "12 months",
+      "video": "/video/swiftxr-editor.mp4",
+      "gallery": [
+        "/images/swiftxr-editor-1.jpg",
+        "/images/swiftxr-editor-2.jpg"
+      ]
+    },
+    {
+      "id": "blockchain-based-metaverses",
+      "date": "November 2021",
+      "title": "Web3D, AR and VRMetaverse Platform",
+      "summary": "Collaborated with a team of developers to create a cross-platform multiplayer VR game that focused on immersive design. Additionally contributed to the design of a Web3D metaverse map to simplify the transactions of virtual lands as NFTs.",
+      "description": "Worked with a team of developers to develop a metaverse platform that combines immersive VR experiences with blockchain technology. The project included creating a multiplayer VR game environment and implementing a Web3D interface for virtual land transactions. The system enables users to purchase, sell, and develop virtual properties as NFTs, with real-time visualization of the metaverse map.",
+      "technologies": ["Web3", "Solidity", "Three.js", "WebXR", "Svelte", "Typescript", "WebSocket"],
+      "duration": "8 months",
+      "video": "/video/vault-hill.mp4",
+      "gallery": [
+        "/images/vault-hill-1.jpg",
+        "/images/vault-hill-2.jpg"
+      ]
+    },
+    {
+      "id": "hse-vr-training",
+      "date": "October 2019",
+      "title": "VR Training for Health, Safety & Environment (HSE)",
+      "summary": "Designed a VR training app that improves safety compliance and reduces incidents through immersive, scenario-based learning for workers in high-risk environments.",
+      "description": "Developed a VR training platform focused on Health, Safety, and Environment (HSE) procedures, designed to simulate real-world hazards in a risk-free environment. The app enabled users to experience emergency scenarios, practice safety protocols, and make decisions under pressure. By replacing static training materials with interactive simulations, the solution aimed to boost engagement, retention, and compliance. It aims to reduce workplace incidents and improve response preparedness.",
+      "technologies": ["Unity", "Oculus SDK", "C#", "Maya", "Substance Painter", "Mixamo"],
+      "duration": "9 months",
+      "video": "/video/hse-vr.mp4",
+      "gallery": [
+        "/images/hse-vr-1.jpg",
+        "/images/hse-vr-2.jpg"
+      ]
+    },
+    {
+      "id": "interractive-fashion-experience",
+      "date": "March 2024",
+      "title": "L'Oréal Web3D & AR Hair Styling",
+      "summary": "Worked with Experience to develop a Web3D and Augmented reality application for L'Oréal that lets users unleash their creativity, enabling them design their own unique hair artistry. It's a fun and interactive platform where users can experiment with styles and express themselves in exciting ways.",
+      "description": "Collaborated with Experience to create an innovative Web3D for L'Oréal that improves hair styling experience. The application allows users to experiment with different hairstyles in real-time, providing an interactive experience that combines creativity with technology. The platform features advanced hair topolofy simulation, realistic texture mapping, and social sharing capabilities, making it both practical and engaging for users.",
+      "technologies": ["WebGL", "Three.js", "WebXR", "React.js", "Typescript"],
+      "duration": "5 months",
+      "video": "/video/loreal-ar.mp4",
+      "gallery": [
+        "/images/loreal-ar-1.jpg",
+        "/images/loreal-ar-2.jpg"
+      ]
+    },
+    {
+      "id": "banking-chatbot",
+      "date": "March 2023",
+      "title": "Lloyds Banking Campus Experience",
+      "summary": "Worked with Experience and Fourth Wall to create an immersive digital experience for Lloyds Banking Group, incorporating an AI chatbot within a mobile trailer to engage students on campuses. We targeted modular and scalable solutions for wider reach, which resulted in engagements with over 11,000 students.",
+      "description": "Developed an innovative mobile experience for Lloyds Banking Group that combined AI chatbot technology with interactive digital displays. The solution was deployed in a mobile trailer that visited university campuses, engaging students through personalized financial education and interactive experiences. The modular design allowed for easy customization and scaling, leading to successful engagement with over 11,000 students across multiple campuses.",
+      "technologies": ["Node.js", "Express", "MongoDB", "WebSocket", "React.js", "Typescript", "AI"],
+      "duration": "4 months",
+      "image": "/images/lloyds-chatbot.jpg",
+      "gallery": [
+        "/images/lloyds-chatbot-1.jpg",
+        "/images/lloyds-chatbot-2.jpg"
+      ]
+    },
+    {
+      "id": "VR-Experience",
+      "date": "March 2021",
+      "title": "Teni's Wondaland Virtual Reality Tour",
+      "summary": "Designed and developed a 360 VR experience for 'Wondaland', an album released by Nigerian artist Teni, reflecting her physical tour in a virtual space, allowing fans to explore the album's themes through an immersive, interactive experience.",
+      "description": "Created an innovative 360-degree VR experience for Nigerian artist Teni's 'Wondaland' album. The virtual environment recreated the physical tour experience, allowing fans to explore the album's themes and stories through an immersive journey. The experience featured interactive elements, spatial audio, and dynamic visual effects that brought the music to life in a new dimension.",
+      "technologies": ["Unity", "Oculus SDK", "Spatial Audio", "C#", "Timeline", "Cinemachine"],
+      "duration": "3 months",
+      "youtube": "https://www.youtube.com/embed/upIRr9WiEKQ?list=RDupIRr9WiEKQ",
+      "gallery": [
+        "/images/wondaland-vr-1.jpg",
+        "/images/wondaland-vr-2.jpg",
+        "/images/wondaland-vr-3.jpg",
+        "/images/wondaland-vr-4.jpg"
+      ]
+    },
+    {
+      "id": "Mastercard",
+      "date": "July 2022",
+      "title": "Mastercard Spend & Win Activation Campaign",
+      "summary": "Developed a Mastercard spend and win app for their activation campaign that let users enter a raffle draw for a chance to win exciting items. This fun feature got users excited and made shopping interesting, with users eagerly participating for a chance to win.",
+      "description": "Designed and developed an engaging mobile application for Mastercard's activation campaign that transformed the shopping experience. The app integrated with Mastercard's payment system to track purchases and automatically enter users into raffle draws. The platform featured real-time notifications, interactive leaderboards, and instant win mechanics, creating an exciting and engaging shopping experience that drove user participation and brand engagement.",
+      "technologies": ["React.js", "Firebase", "Node.js", "Express", "Typescript"],
+      "duration": "4 months",
+      "image": "/images/mastercard-app.jpg",
+      "gallery": [
+        "/images/mastercard-app-1.jpg",
+        "/images/mastercard-app-2.jpg"
+      ]
+    },
+    {
+      "id": "Web-AR",
+      "date": "May 2021",
+      "title": "Marriott Hotel AR Experience",
+      "summary": "Developed a WebAR experience for Marriott hotels Ikeja that lets users explore rooms in augmented reality. By streamlining interactions with immersive visuals, there was a boosted engagement which enhanced Marriott's digital presence.",
+      "description": "Created an innovative WebAR platform for Marriott hotels that improved how guests explore different rooms to be booked. The experience allowed users to visualize hotel amenities, local attractions, and room layouts through augmented reality directly in their web browser. The solution featured interactive 3D models of various rooms that can be booked, significantly enhancing user engagement and booking conversion rates.",
+      "technologies": ["HTML", "CSS", "JavaScript", "Three.js", "A-Frame", "WebGL"],
+      "duration": "3 months",
+      "video": "/video/marriott-ar.mp4",
+      "gallery": [
+        "/images/marriott-ar-1.jpg",
+        "/images/marriott-ar-2.jpg",
+        "/images/marriott-ar-3.jpg"
+      ]
+    },
+    {
+      "id": "vr-input-experiment",
+      "date": "May 2021",
+      "title": "VR Input Demo: Hand, Eye & Haptics",
+      "summary": "Explored multi-modal VR interaction by combining hand tracking, eye gaze, and haptic feedback. Introduced a reimagined gaze-selection system designed for comfort and customization.",
+      "description": "Built an experimental VR demo that explored advanced user input methods using hand gestures, eye tracking, and haptic feedback. A redesigned gaze-selection system was implemented, enabling intuitive selection with reduced fatigue. The interface was modular and easy to customize, allowing real-time design tweaks and user testing. The project focused on ergonomic interaction, accessibility, and smooth multi-input integration for immersive design experiences.",
+      "technologies": ["Unity", "Oculus SDK", "Maya", "Substance Painter", "Mixamo"],
+      "duration": "1 month",
+      "video": "/video/vr-interaction-demo.mp4",
+      "gallery": []
+    },
+    {
+      "id": "ship-steering-simulator",
+      "date": "March 2018",
+      "title": "Ship Steering Simulation",
+      "summary": "Designed a high-fidelity 3D simulation of seaport and ocean environments for ship steering training, enhancing realism and improving maritime safety outcomes.",
+      "description": "Built a real-time ship steering simulator for OCI Automation using a custom 3D seaport and ocean environment. The simulation featured dynamic ocean physics, wind conditions, and docking scenarios to train operators in realistic maritime conditions. Designed for educational and industrial use, it improved hands-on training, reduced onboarding time, and elevated safety standards through immersive learning.",
+      "technologies": ["Unity", "C#", "OpenGL", "PhysX"],
+      "duration": "10 months",
+      "video": "/video/ship-simulator.mp4",
+      "gallery": [
+        "/images/ship-simulator-1.jpg",
+        "/images/ship-simulator-2.jpg",
+        "/images/ship-simulator-3.jpg"
+      ]
+    },
+    {
+      "id": "XR-instructor",
+      "date": "January 2019",
+      "title": "HOFT Machine AR Training Platform",
+      "summary": "Designed a Web3D and AR platform for simulating machine operations, giving engineering students hands-on experience with complex machinery in immersive, interactive ways..",
+      "description": "Created a browser-based AR and Web3D platform tailored for HOFT machine training, enabling students to visualize, explore, and simulate machine functions in real-time. The platform featured interactive 3D models of industrial equipment, assembly guides, and step-by-step operation simulations. It was integrated into engineering education programs, helping over 20 students build portfolio-ready XR projects while deepening their understanding of machine mechanics and processes.",
+      "technologies": ["WebXR", "Three.js", "WebGL", "HTML", "JavaScript"],
+      "duration": "6 months",
+      "video": "/video/hoft-workshop.mp4",
+      "gallery": [
+        "/images/hoft-workshop-1.jpg",
+        "/images/hoft-workshop-2.jpg",
+        "/images/hoft-workshop-3.jpg"
+      ]
+    },
+    {
+      "id": "AR-Glasses",
+      "date": "June 2024",
+      "title": "Augmented Reality Smart Glasses for Hearing Accessibility",
+      "summary": "Built a smart glasses application in Nigeria that shows real-time subtitles of what's being said, making it easier for people with hearing impairments or difficulty hearing to follow conversations. The glasses also offer adjustable text options and use voice recognition to improve communication.",
+      "description": "Developed an innovative smart glasses application that enhances communication accessibility for people with hearing impairments. The system provides real-time speech-to-text conversion, displaying subtitles directly in the user's field of view. Features include adjustable text size and position, voice recognition for improved accuracy, and offline processing capabilities. The solution has significantly improved communication accessibility in various settings, from educational institutions to public spaces.",
+      "technologies": ["Unity", "WebSocket", "Android", "XREAL", "C#", "Node.js", "Express", "Speech to Text AI Model", "AI"],
+      "duration": "8 months",
+      "image": "/images/smart-glasses.jpg",
+      "gallery": [
+        "/images/smart-glasses-1.jpg",
+        "/images/smart-glasses-2.jpg"
+      ]
+    }
+  ]
+}

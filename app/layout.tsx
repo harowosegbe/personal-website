@@ -1,10 +1,10 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-import { themeEffect } from "./theme-effect";
-import { Analytics } from "./analytics";
-import { Header } from "./header";
-import { Footer } from "./footer";
+import { themeEffect } from "@/app/helpers/theme-effect";
+import { Analytics } from "@/app/components/analytics";
+import { Header } from "@/app/components/header";
+import { Footer } from "@/app/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,12 +36,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-  // return (
-  //   <h1>
-  //     Currently cooking, kindly check back later.
-  //   </h1>
-  // )
   
   return (
     <html
@@ -58,8 +52,8 @@ export default function RootLayout({
       </head>
 
       <body className="dark:text-gray-100 max-w-2xl m-auto">
-        <main className="p-6 pt-3 md:pt-6 min-h-screen">
-          <Header />
+        <Header />
+        <main className="p-6 pt-20 md:pt-24 min-h-screen">
           {children}
         </main>
 
