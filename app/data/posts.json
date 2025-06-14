@@ -145,7 +145,7 @@
     },
     {
       "id": "vr-input-experiment",
-      "date": "May 2021",
+      "date": "November 2020",
       "title": "VR Input Demo: Hand, Eye & Haptics",
       "summary": "Explored multi-modal VR interaction by combining hand tracking, eye gaze, and haptic feedback. Introduced a reimagined gaze-selection system designed for comfort and customization.",
       "description": "Built an experimental VR demo that explored advanced user input methods using hand gestures, eye tracking, and haptic feedback. A redesigned gaze-selection system was implemented, enabling intuitive selection with reduced fatigue. The interface was modular and easy to customize, allowing real-time design tweaks and user testing. The project focused on ergonomic interaction, accessibility, and smooth multi-input integration for immersive design experiences.",
