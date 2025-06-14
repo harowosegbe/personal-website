@@ -13,6 +13,7 @@ interface Post {
   title: string;
   summary: string;
   technologies: string[];
+  duration: string;
 }
 
 export function Posts() {
@@ -47,6 +48,14 @@ export function Posts() {
       </main>
     </Suspense>
   );
+}
+
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric',
+    month: 'long'
+  });
 }
 
 function List({ posts, sort }: { posts: Post[]; sort: SortSetting }) {
@@ -93,6 +102,11 @@ function List({ posts, sort }: { posts: Post[]; sort: SortSetting }) {
                   <div className="grow">
                     <h2 className="text-lg font-medium dark:text-gray-100 mb-2">{post.title}</h2>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{post.summary}</p>
+                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                      <span>•</span>
+                      <span>{post.duration}</span>
+                    </div>
                     {post.technologies && (
                       <div className="flex flex-wrap gap-1.5">
                         {post.technologies.map((tech) => (

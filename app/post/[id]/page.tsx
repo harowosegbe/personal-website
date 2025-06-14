@@ -16,6 +16,14 @@ interface Post {
   gallery?: string[]
 }
 
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric',
+    month: 'long'
+  });
+}
+
 export default function PostPage({ params }: { params: { id: string } }) {
   const post = posts.posts.find((p: Post) => p.id === params.id)
 
@@ -28,7 +36,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-mono">{post.title}</h1>
         <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 font-mono">
-          <time dateTime={post.date}>{post.date}</time>
+          <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span>•</span>
           <span>{post.duration}</span>
         </div>
