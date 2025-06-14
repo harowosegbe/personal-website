@@ -22,7 +22,7 @@
       "description": "Led the development of an advanced CAD engine specifically designed for solar rooftop installations. The system incorporates real-time environmental data, shading calculations, and roof geometry optimization. Key features include automated panel placement algorithms, energy output predictions, and 3D visualization capabilities. The solution significantly reduced design time while improving accuracy and energy efficiency of installations.",
       "technologies": ["Three.js", "WebGL", "Next.js", "Typescript", "AI"],
       "duration": "6 months",
-      "video": "/images/aether-solar-cad.mp4",
+      "video": "/video/aether-solar-cad.mp4",
       "gallery": [
         "/images/aether-solar-cad-1.jpg",
         "/images/aether-solar-cad-2.jpg"
