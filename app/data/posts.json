@@ -45,7 +45,7 @@
     {
       "id": "blockchain-based-metaverses",
       "date": "November 2021",
-      "title": "Web3D, AR and VRMetaverse Platform",
+      "title": "Web3D, AR, and VR Metaverse Platform",
       "summary": "Collaborated with a team of developers to create a cross-platform multiplayer VR game that focused on immersive design. Additionally contributed to the design of a Web3D metaverse map to simplify the transactions of virtual lands as NFTs.",
       "description": "Worked with a team of developers to develop a metaverse platform that combines immersive VR experiences with blockchain technology. The project included creating a multiplayer VR game environment and implementing a Web3D interface for virtual land transactions. The system enables users to purchase, sell, and develop virtual properties as NFTs, with real-time visualization of the metaverse map.",
       "technologies": ["Web3", "Solidity", "Three.js", "WebXR", "Svelte", "Typescript", "WebSocket"],
