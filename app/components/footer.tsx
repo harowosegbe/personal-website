@@ -14,13 +14,7 @@ export function Footer() {
     >
       <div className="grow text-left">
         Hammed Arowosegbe (
-        {/* <A target="_blank" href="https://x.com/HammedArrow">
-          @HammedArrow
-        </A> */}
-
-        <A target="_blank" href="https://www.linkedin.com/in/hammed-arowosegbe/">
-          LinkedIn
-        </A>
+        arowosegbe.hammed.olawale@gmail.com
         )
       </div>
       <div>
