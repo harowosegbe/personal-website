@@ -6,32 +6,32 @@ import { Logo } from "./logo";
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-50/80 dark:bg-zinc-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-4xl mx-auto px-4 py-4 flex items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-50/80 dark:bg-[#111]/80 backdrop-blur-md border-b border-gray-200/60 dark:border-gray-800/60">
+      <div className="max-w-3xl mx-auto px-4 py-4 flex items-center">
         <Logo />
 
-        <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3">
+        <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3 font-medium">
           <ThemeToggle />
 
           <Link
             href="/about"
-            className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
+            className="inline-flex hover:bg-gray-200/50 dark:hover:bg-[#313131]/50 active:bg-gray-300/50 dark:active:bg-[#242424]/50 rounded-md px-3 py-2 transition-colors"
           >
             About
           </Link>
           <a
             href="https://x.com/HammedArrow"
             target="_blank"
-            className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color] whitespace-nowrap -mr-2"
+            className="inline-flex hover:bg-gray-200/50 dark:hover:bg-[#313131]/50 active:bg-gray-300/50 dark:active:bg-[#242424]/50 items-center px-3 py-2 rounded-md transition-colors whitespace-nowrap"
           >
-            <TweetIcon style={{ marginRight: 4 }} /> Follow{" "}
+            <TweetIcon style={{ marginRight: 6 }} /> Follow{" "}
             <span className="hidden md:inline">&nbsp;me</span>
           </a>
           <a
             href="https://www.linkedin.com/in/hammed-arowosegbe/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color]"
+            className="inline-flex hover:bg-gray-200/50 dark:hover:bg-[#313131]/50 active:bg-gray-300/50 dark:active:bg-[#242424]/50 items-center px-3 py-2 rounded-md transition-colors"
           >
             LinkedIn
           </a>

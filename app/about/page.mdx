@@ -1,7 +1,9 @@
-import { Image } from "next/image"
-
-<div className="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start mb-8 border border-gray-200 dark:border-gray-800">
-  <a href="https://x.com/HammedArrow" target="_blank" className="block shrink-0">
+<div className="bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start mb-8 border border-gray-200 dark:border-gray-800">
+  <a
+    href="https://x.com/HammedArrow"
+    target="_blank"
+    className="block shrink-0"
+  >
     <img
       src="/images/hammed-headshot.jpg"
       alt="Hammed Arowosegbe"
@@ -11,36 +13,101 @@ import { Image } from "next/image"
       priority
     />
   </a>
-  <div className="flex-1 w-full">
-    <div className="flex flex-wrap gap-2 mb-6 font-mono">
-      <span className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full">Chapter President, Nigeria - VR/AR Association</span>
-      <span className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full">MSc in Artificial Intelligence</span>
-      <span className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full">Founder, SwiftXR</span>
-      <span className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full">Founding Engineer (CAD), Aether Energy</span>
-      <span className="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full">Sr. Software Engineer, XR (ex-PwC)</span>
+  <div className="flex-1 w-full max-w-prose">
+    <div className="flex flex-wrap gap-x-2 gap-y-1 mb-6 font-mono text-[10px] md:text-[11px]">
+      <span className="inline-flex items-center h-6 px-2 text-[10px] md:text-[11px] leading-none font-medium border border-gray-200/60 dark:border-gray-700/60 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-600 dark:text-gray-400 rounded-full">
+        Senior 3D / XR Engineer
+      </span>
+      <span className="inline-flex items-center h-6 px-2 text-[10px] md:text-[11px] leading-none font-medium border border-gray-200/60 dark:border-gray-700/60 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-600 dark:text-gray-400 rounded-full">
+        MSc Artificial Intelligence
+      </span>
+      <span className="inline-flex items-center h-6 px-2 text-[10px] md:text-[11px] leading-none font-medium border border-gray-200/60 dark:border-gray-700/60 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-600 dark:text-gray-400 rounded-full">
+        MBA Candidate
+      </span>
+      <span className="inline-flex items-center h-6 px-2 text-[10px] md:text-[11px] leading-none font-medium border border-gray-200/60 dark:border-gray-700/60 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-600 dark:text-gray-400 rounded-full">
+        Chapter President, Nigeria - VR/AR Association
+      </span>
+      <span className="inline-flex items-center h-6 px-2 text-[10px] md:text-[11px] leading-none font-medium border border-gray-200/60 dark:border-gray-700/60 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-600 dark:text-gray-400 rounded-full">
+        Web3D · AR · VR · AI
+      </span>
     </div>
-    <p className="text-base text-gray-800 dark:text-gray-200 mb-4 font-mono">
-      With over six years in the 3D and immersive technology industries, Hammed has a strong track record of impactful contributions to virtual and augmented reality, including collaborations with leading brands like Marriott, Mastercard, Lloyds, and L'Oreal.
-    </p>
-    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 font-mono">
-      As Chapter President of the VR/AR Association in Nigeria, Hammed drives VR and AR adoption across Africa, advocating for innovation and inclusivity in these fields. He also pioneered the development of SwiftXR, a no-code platform empowering over 25,000 users to easily create and share 3D, augmented, and virtual reality experiences, making immersive content accessible to all.
-    </p>
+
+    <div className="space-y-6">
+      <div>
+        <h4 className="font-mono text-xs font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-2">Professional Work</h4>
+        <p className="text-base text-gray-800 dark:text-gray-200 font-mono leading-relaxed">
+          Hammed Arowosegbe is a Senior 3D / XR Engineer with over six years of experience building immersive, interactive systems for global brands. His work spans projects for internationally recognized brands including Marriott, Mastercard, Lloyds, Globacom, and L’Oréal.
+        </p>
+      </div>
+
+      <div>
+        <h4 className="font-mono text-xs font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-2">Leadership & Community</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400 font-mono leading-relaxed">
+          Beyond commercial work, Hammed advances XR adoption across Africa as President of the VR/AR Association Nigeria Chapter, supporting industry growth, access to knowledge, and community development.
+        </p>
+      </div>
+
+      <div>
+        <h4 className="font-mono text-xs font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-2">Platforms & Impact</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400 font-mono leading-relaxed">
+          Previously a Founding Engineer at Aether Energy (YC-backed), he contributed to a Web3D solar platform for rooftop design and simulation. He also pioneered SwiftXR, a no-code platform powering over 1 million immersive experiences for businesses and creators.
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>
 
 ---
 
-<h3 className="font-mono text-lg mb-4">Key Technical Achievements</h3>
+<h3 className="font-mono text-lg mb-4 text-gray-900 dark:text-white">
+  Key Technical Achievements
+</h3>
 
-<div className="font-mono text-sm space-y-2">
-- **SwiftXR**: Launched a no-code platform enabling 25,000+ users to build 3D, AR, and VR experiences
-- **Smart Glasses**: Engineered real-time AI translation glasses supporting Yoruba, Igbo, and Hausa languages
-- **3D Art Tool**: Created a tool that transforms 2D images into interactive 3D artwork
-- **Lloyds AI System**: Developed a real-time, bidirectional AI communication system for interactive displays
-- **Solar CAD Platform**: Built a solar design platform integrating CAD models with 3D simulations
-- **AR/VR Components**: Developed interactive 3D model elements using WebXR SDK
-- **VR Core**: Created a VR prototype integrating audio, visual, haptic feedback, and eye tracking
-- **Motion Tracking**: Built Kinect-powered interactive installations for brand activations
-- **Maritime Simulator**: Developed high-fidelity ship steering simulations with realistic physics
-- **Web3D Training**: Created browser-based AR training for industrial machinery
-</div>
+<ul className="font-mono text-sm space-y-2 list-disc pl-5 text-gray-700 dark:text-gray-300">
+  <li>
+    <strong className="text-gray-900 dark:text-white">SwiftXR</strong>: Launched
+    a no-code platform used by 25,000+ creators, powering over 1 million
+    immersive experiences across web, AR, and VR
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">Lloyds AI System</strong>:
+    Architected a real-time, bidirectional AI communication system for
+    interactive displays
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">Smart Glasses</strong>:
+    Engineered real-time AI translation glasses supporting Yoruba, Igbo, and
+    Hausa languages
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">Solar CAD Platform</strong>: 
+    Designed and implemented a solar design platform integrating CAD models
+    with 3D simulations
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">Maritime Simulator</strong>:
+    Engineered high-fidelity ship steering simulations with realistic physics
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">VR Core</strong>:
+    Prototyped a VR system integrating audio, visual, haptic feedback, and eye
+    tracking
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">Motion Tracking</strong>:
+    Constructed Kinect-powered interactive installations for brand activations
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">Web3D Training</strong>:
+    Built browser-based AR training modules for industrial machinery
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">AR/VR Components</strong>:
+    Implemented interactive 3D model elements using WebXR SDK
+  </li>
+  <li>
+    <strong className="text-gray-900 dark:text-white">3D Art Tool</strong>:
+    Created a tool that transforms 2D images into interactive 3D artwork
+  </li>
+</ul>
