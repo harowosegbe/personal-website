@@ -22,13 +22,11 @@ export const metadata: Metadata = {
     url: "https://hammedarowosegbe.com",
     siteName: "Hammed Arowosegbe",
     type: "website",
-    images: [{ url: "/images/smart-glasses.jpg" }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     site: "@HammedArrow",
     creator: "@HammedArrow",
-    images: ["/images/smart-glasses.jpg"],
   },
   metadataBase: new URL("https://hammedarowosegbe.com"),
 };
