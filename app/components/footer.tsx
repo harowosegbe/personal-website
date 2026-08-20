@@ -8,13 +8,13 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500">
-              Have a difficult spatial problem?
+              Contact
             </p>
             <a
               href="mailto:arowosegbe.hammed.olawale@gmail.com"
-              className="mt-4 block max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.045em] text-zinc-950 transition-colors hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300 sm:text-4xl md:text-5xl"
+              className="mt-4 block max-w-3xl break-all font-mono text-xl text-zinc-950 transition-colors hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300 sm:text-2xl md:text-3xl"
             >
-              Let&apos;s make it tangible. ↗
+              arowosegbe.hammed.olawale@gmail.com ↗
             </a>
           </div>
           <div className="flex gap-5 font-mono text-[11px] text-zinc-500">

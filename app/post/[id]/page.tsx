@@ -54,247 +54,224 @@ export default function PostPage({ params }: { params: { id: string } }) {
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <article className="pb-24 pt-28 md:pb-32 md:pt-36">
-      <header className="mx-auto max-w-6xl px-5 md:px-8">
-        <Link
-          href="/#work"
-          className="mb-12 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-500 transition-colors hover:text-zinc-950 dark:hover:text-white"
-        >
-          <span aria-hidden="true">←</span> Selected work
-        </Link>
+    <article className="pb-24 pt-24 md:pb-28 md:pt-28">
+      <header>
+        <div className="mx-auto max-w-3xl px-5 md:px-8">
+          <Link
+            href="/#work"
+            className="mb-8 inline-block border-b border-zinc-300 pb-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500 transition-colors hover:border-zinc-950 hover:text-zinc-950 dark:border-zinc-700 dark:hover:border-white dark:hover:text-white"
+          >
+            ← Project index
+          </Link>
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(18rem,0.65fr)] lg:items-end">
-          <div>
-            <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-              {project.category}
-            </p>
-            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-zinc-950 dark:text-white sm:text-5xl md:text-6xl">
-              {project.title}
-            </h1>
+          <div className="grid grid-cols-[4rem_minmax(0,1fr)_auto] gap-3 border-b border-zinc-300 pb-3 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500 dark:border-zinc-700">
+            <span>Record</span>
+            <span>{project.category}</span>
+            <time dateTime={project.date}>{project.date.slice(0, 4)}</time>
           </div>
-          <p className="border-l border-zinc-200 pl-5 text-lg leading-8 text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+
+          <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-zinc-950 dark:text-white sm:text-5xl">
+            {project.title}
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
             {project.summary}
           </p>
         </div>
 
-        <dl className="mt-14 grid grid-cols-2 border-y border-zinc-200 font-mono dark:border-zinc-800 md:grid-cols-4">
-          {[
-            ["Organisation / Context", project.client],
-            ["Role", project.role],
-            ["Timeline", project.duration],
-            ["Date", formatDate(project.date)],
-          ].map(([label, value], index) => (
-            <div
-              key={label}
-              className={`py-5 pr-4 ${index % 2 ? "pl-4" : ""} ${
-                index > 0 ? "md:border-l md:pl-5" : ""
-              } ${
-                index > 1 ? "border-t md:border-t-0" : ""
-              } border-zinc-200 dark:border-zinc-800`}
-            >
-              <dt className="text-[9px] uppercase tracking-[0.16em] text-zinc-500">
-                {label}
-              </dt>
-              <dd className="mt-2 text-xs leading-5 text-zinc-800 dark:text-zinc-200">
-                {value}
-              </dd>
+        <div className="mx-auto mt-8 max-w-5xl px-5 md:px-8">
+          {project.youtube ? (
+            <div className="relative aspect-video overflow-hidden border border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900">
+              <iframe
+                src={project.youtube}
+                title={`${project.title} project video`}
+                className="absolute inset-0 h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="eager"
+                allowFullScreen
+              />
             </div>
-          ))}
-        </dl>
+          ) : project.video ? (
+            <div className="relative aspect-video overflow-hidden border border-zinc-300 bg-black dark:border-zinc-700">
+              <ProjectVideo
+                src={project.video}
+                poster={project.image ?? project.cover}
+                title={project.title}
+              />
+            </div>
+          ) : project.image || project.cover ? (
+            <div className="relative aspect-video overflow-hidden border border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900">
+              <Image
+                src={project.image ?? project.cover}
+                alt={`${project.title} interface`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 960px, 100vw"
+                className="object-contain"
+              />
+            </div>
+          ) : null}
+        </div>
+
+        <div className="mx-auto mt-8 max-w-3xl px-5 md:px-8">
+          <dl className="border-t border-zinc-200 font-mono dark:border-zinc-800">
+            {[
+              ["Organisation / Context", project.client],
+              ["Role", project.role],
+              ["Timeline", project.duration],
+              ["Date", formatDate(project.date)],
+            ].map(([label, value]) => (
+              <div
+                key={label}
+                className="grid gap-2 border-b border-zinc-200 py-4 sm:grid-cols-[9rem_1fr] sm:gap-4 dark:border-zinc-800"
+              >
+                <dt className="text-[9px] uppercase tracking-[0.13em] text-zinc-500">
+                  {label}
+                </dt>
+                <dd className="text-xs leading-5 text-zinc-700 dark:text-zinc-300">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </header>
 
-      <div className="mx-auto mt-10 max-w-7xl px-3 md:mt-14 md:px-6">
-        {project.youtube ? (
-          <div className="relative aspect-video overflow-hidden rounded-sm border border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900">
-            <iframe
-              src={project.youtube}
-              title={`${project.title} project video`}
-              className="absolute inset-0 h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              loading="lazy"
-              allowFullScreen
-            />
-          </div>
-        ) : project.video ? (
-          <div className="relative aspect-video overflow-hidden rounded-sm border border-zinc-300 bg-black dark:border-zinc-700">
-            <ProjectVideo
-              src={project.video}
-              poster={project.image ?? project.cover}
-              title={project.title}
-            />
-          </div>
-        ) : project.image ? (
-          <div className="relative aspect-video overflow-hidden rounded-sm border border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900">
-            <Image
-              src={project.image}
-              alt={`${project.title} interface`}
-              fill
-              priority
-              sizes="(min-width: 1280px) 1280px, 100vw"
-              className="object-contain"
-            />
-          </div>
-        ) : null}
-      </div>
-
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <div className="grid gap-12 py-20 md:py-28 lg:grid-cols-[minmax(12rem,0.55fr)_minmax(0,1.45fr)]">
+      <div className="mx-auto mt-16 max-w-3xl px-5 md:px-8">
+        <section className="grid gap-5 border-t border-zinc-200 pt-6 sm:grid-cols-[9rem_1fr] sm:gap-4 dark:border-zinc-800">
+          <h2 className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">
+            Overview
+          </h2>
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-              01 / Overview
-            </p>
-          </div>
-          <div>
-            <p className="max-w-3xl text-xl leading-9 tracking-[-0.015em] text-zinc-700 dark:text-zinc-300 md:text-2xl md:leading-10">
+            <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
               {project.description}
             </p>
-
-            <div className="mt-14 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
-                Outcome
-              </p>
-              <p className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-zinc-950 dark:text-white md:text-3xl">
-                {project.impact}
-              </p>
-            </div>
+            <dl className="mt-8 border-t border-zinc-200 font-mono dark:border-zinc-800">
+              <div className="grid gap-2 border-b border-zinc-200 py-4 sm:grid-cols-[7rem_1fr] sm:gap-4 dark:border-zinc-800">
+                <dt className="text-[9px] uppercase tracking-[0.13em] text-zinc-500">
+                  Outcome
+                </dt>
+                <dd className="text-xs leading-5 text-zinc-700 dark:text-zinc-300">
+                  {project.impact}
+                </dd>
+              </div>
+            </dl>
           </div>
-        </div>
+        </section>
 
         <section
           aria-labelledby="engineering-title"
-          className="grid gap-12 border-t border-zinc-200 py-20 dark:border-zinc-800 md:py-28 lg:grid-cols-[minmax(12rem,0.55fr)_minmax(0,1.45fr)]"
+          className="mt-16 grid gap-5 border-t border-zinc-200 pt-6 sm:grid-cols-[9rem_1fr] sm:gap-4 dark:border-zinc-800"
         >
+          <h2
+            id="engineering-title"
+            className="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500"
+          >
+            Engineering
+          </h2>
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-              02 / Delivery
-            </p>
-            <h2
-              id="engineering-title"
-              className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-zinc-950 dark:text-white"
-            >
-              Engineering focus
-            </h2>
-          </div>
-          <div>
-            <ol className="space-y-0 border-t border-zinc-200 dark:border-zinc-800">
+            <ol className="border-t border-zinc-200 dark:border-zinc-800">
               {project.highlights.map((highlight, index) => (
                 <li
                   key={highlight}
-                  className="grid grid-cols-[2rem_1fr] gap-4 border-b border-zinc-200 py-6 dark:border-zinc-800"
+                  className="grid grid-cols-[2rem_1fr] gap-3 border-b border-zinc-200 py-5 dark:border-zinc-800"
                 >
-                  <span className="font-mono text-[10px] text-zinc-500">
-                    0{index + 1}
+                  <span className="font-mono text-[9px] text-zinc-400">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+                  <span className="text-sm leading-6 text-zinc-700 dark:text-zinc-300">
                     {highlight}
                   </span>
                 </li>
               ))}
             </ol>
 
-            {project.technicalChallenge && (
-              <div className="mt-10 border-l-2 border-zinc-950 pl-5 dark:border-white">
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
-                  Hardest engineering problem
-                </p>
-                <p className="mt-3 max-w-3xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-                  {project.technicalChallenge}
-                </p>
-              </div>
-            )}
+            {project.technicalChallenge ? (
+              <dl className="mt-8 border-t border-zinc-200 font-mono dark:border-zinc-800">
+                <div className="grid gap-2 border-b border-zinc-200 py-4 sm:grid-cols-[7rem_1fr] sm:gap-4 dark:border-zinc-800">
+                  <dt className="text-[9px] uppercase leading-4 tracking-[0.13em] text-zinc-500">
+                    Hardest problem
+                  </dt>
+                  <dd className="text-xs leading-5 text-zinc-700 dark:text-zinc-300">
+                    {project.technicalChallenge}
+                  </dd>
+                </div>
+              </dl>
+            ) : null}
 
-            <div className="mt-10">
-              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
-                System stack
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map(technology => (
-                  <span
-                    key={technology}
-                    className="rounded-sm border border-zinc-300 px-3 py-1.5 font-mono text-[10px] text-zinc-600 dark:border-zinc-700 dark:text-zinc-400"
-                  >
-                    {technology}
-                  </span>
-                ))}
+            <dl className="mt-8 border-t border-zinc-200 font-mono dark:border-zinc-800">
+              <div className="grid gap-2 border-b border-zinc-200 py-4 sm:grid-cols-[7rem_1fr] sm:gap-4 dark:border-zinc-800">
+                <dt className="text-[9px] uppercase tracking-[0.13em] text-zinc-500">
+                  Stack
+                </dt>
+                <dd className="text-xs leading-5 text-zinc-700 dark:text-zinc-300">
+                  {project.technologies.join(" · ")}
+                </dd>
               </div>
-            </div>
+            </dl>
           </div>
         </section>
-
-        {project.gallery && project.gallery.length > 0 && (
-          <section
-            aria-labelledby="gallery-title"
-            className="border-t border-zinc-200 py-20 dark:border-zinc-800 md:py-28"
-          >
-            <div className="mb-10 flex items-end justify-between gap-6">
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
-                  03 / Evidence
-                </p>
-                <h2
-                  id="gallery-title"
-                  className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white"
-                >
-                  Project gallery
-                </h2>
-              </div>
-              <span className="font-mono text-[10px] text-zinc-500">
-                {String(project.gallery.length).padStart(2, "0")} frames
-              </span>
-            </div>
-            <div className="grid gap-5 md:grid-cols-2">
-              {project.gallery.map((image, index) => (
-                <figure
-                  key={image}
-                  className={`relative overflow-hidden rounded-sm border border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 ${
-                    index === 0 && project.gallery!.length % 2 !== 0
-                      ? "md:col-span-2"
-                      : ""
-                  }`}
-                >
-                  <div className="relative aspect-[4/3]">
-                    <Image
-                      src={image}
-                      alt={`${project.title}, project view ${index + 1}`}
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-contain"
-                    />
-                  </div>
-                  <figcaption className="border-t border-zinc-200 px-4 py-3 font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-500 dark:border-zinc-800">
-                    Frame {String(index + 1).padStart(2, "0")}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <nav
-          aria-label="Continue through projects"
-          className="border-t border-zinc-200 pt-12 dark:border-zinc-800"
-        >
-          <Link
-            href={`/post/${nextProject.id}`}
-            className="group grid gap-3 rounded-sm border border-zinc-300 p-6 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-900 sm:grid-cols-[1fr_auto] sm:items-end md:p-8"
-          >
-            <span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
-                Next project
-              </span>
-              <span className="mt-3 block text-2xl font-semibold tracking-[-0.035em] text-zinc-950 dark:text-white md:text-3xl">
-                {nextProject.title}
-              </span>
-            </span>
-            <span
-              aria-hidden="true"
-              className="text-2xl transition-transform group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </Link>
-        </nav>
       </div>
+
+      {project.gallery && project.gallery.length > 0 ? (
+        <section
+          aria-labelledby="gallery-title"
+          className="mx-auto mt-16 max-w-5xl px-5 md:px-8"
+        >
+          <div className="grid grid-cols-[4rem_1fr_auto] gap-3 border-y border-zinc-300 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500 dark:border-zinc-700">
+            <span>Media</span>
+            <h2 id="gallery-title">Project views</h2>
+            <span>{String(project.gallery.length).padStart(2, "0")}</span>
+          </div>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {project.gallery.map((image, index) => (
+              <figure
+                key={image}
+                className={`overflow-hidden border border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 ${
+                  index === 0 && project.gallery!.length % 2 !== 0
+                    ? "md:col-span-2"
+                    : ""
+                }`}
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={image}
+                    alt={`${project.title}, project view ${index + 1}`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="border-t border-zinc-200 px-4 py-3 font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-500 dark:border-zinc-800">
+                  Frame {String(index + 1).padStart(2, "0")}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <nav
+        aria-label="Continue through projects"
+        className="mx-auto mt-16 max-w-3xl px-5 md:px-8"
+      >
+        <Link
+          href={`/post/${nextProject.id}`}
+          className="group grid grid-cols-[4rem_minmax(0,1fr)_auto] gap-3 border-y border-zinc-300 py-5 font-mono transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-900/40"
+        >
+          <span className="text-[9px] uppercase tracking-[0.12em] text-zinc-500">
+            Next
+          </span>
+          <span className="text-xs font-medium text-zinc-950 dark:text-white">
+            {nextProject.title}
+          </span>
+          <span
+            aria-hidden="true"
+            className="text-xs text-zinc-400 transition-transform group-hover:translate-x-1 group-hover:text-zinc-950 dark:group-hover:text-white"
+          >
+            →
+          </span>
+        </Link>
+      </nav>
     </article>
   );
 }
