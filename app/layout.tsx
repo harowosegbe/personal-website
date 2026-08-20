@@ -1,28 +1,34 @@
 import "./globals.css";
 
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 import { themeEffect } from "@/app/helpers/theme-effect";
 import { Analytics } from "@/app/components/analytics";
 import { Header } from "@/app/components/header";
 import { Footer } from "@/app/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Hammed Arowosegbe",
+export const metadata: Metadata = {
+  title: {
+    default: "Hammed Arowosegbe — Senior 3D / XR Engineer",
+    template: "%s — Hammed Arowosegbe",
+  },
   description:
-    "Hammed Arowosegbe is a Senior Software Engineer specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
+    "Senior 3D and XR engineer building Web3D, CAD, AR, VR and AI-powered spatial products.",
+  keywords: ["3D engineer", "XR engineer", "WebXR", "Web3D", "CAD", "AR", "VR"],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Hammed Arowosegbe",
+    title: "Hammed Arowosegbe — Senior 3D / XR Engineer",
     description:
-      "Hammed Arowosegbe is a Senior Software Engineer specializing in CAD, WebXR, AR/VR, and 3D modeling technologies.",
+      "Web3D, CAD, AR, VR and AI products, from browser-based design tools to immersive installations.",
     url: "https://hammedarowosegbe.com",
     siteName: "Hammed Arowosegbe",
+    type: "website",
+    images: [{ url: "/images/smart-glasses.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@HammedArrow",
     creator: "@HammedArrow",
+    images: ["/images/smart-glasses.jpg"],
   },
   metadataBase: new URL("https://hammedarowosegbe.com"),
 };
@@ -36,13 +42,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
   return (
-    <html
-      lang="en"
-      className={`${inter.className} antialiased`}
-      suppressHydrationWarning={true}
-    >
+    <html lang="en" className="antialiased" suppressHydrationWarning={true}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -51,11 +52,9 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="dark:text-gray-100 max-w-2xl m-auto">
+      <body className="bg-[#fcfcfc] text-zinc-950 dark:bg-[#111] dark:text-zinc-100">
         <Header />
-        <main className="p-6 pt-20 md:pt-24 min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
 
         <Footer />
         <Analytics />

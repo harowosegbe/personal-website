@@ -1,57 +1,23 @@
-# blog
+# Hammed Arowosegbe — Portfolio
 
-This is the blog that powers `rauchg.com`, built on
-[next.js](https://nextjs.org/) and
-deployed to the cloud via [Vercel](https://vercel.com).
+A technical portfolio and case-study archive for Hammed Arowosegbe, a senior
+3D and XR engineer working across Web3D, CAD, AR, VR and AI.
 
-## How to run
-
-First, install [Vercel CLI](https://vercel.com/download).
-
-### Development
-
-```
-vc dev
-```
-
-### Deployment
-
-#### Staging
+## Development
 
 ```bash
-vc
+npm install
+npm run dev
 ```
 
-This is the equivalent of submitting a PR with the [GitHub integration](https://vercel.com/github)
+The local site runs at `http://localhost:4444`.
 
-#### Production
+## Production
 
 ```bash
-vc --prod
+npm run build
+npm start
 ```
 
-This is the equivalent of `git push` to `master` (or merging a PR to master)
-
-## Architecture
-
-### Pure components
-
-Every stateless pure component is found under `./components`.
-
-Every component that has to do with styling the post's markup
-is found under `./components/post/`
-
-These components make up the _style guide_ of the application.
-
-### Blog posts
-
-Every blog post is a static page hosted under `pages/$year/`.
-
-This allows every post to load arbitrary modules, have custom layouts
-and take advantage of automatic code splitting and lazy loading.
-
-This means that the bloat of a single post doesn't "rub off on" the
-rest of the site.
-
-An index of all posts is maintained in JSON format as `./posts.json`
-for practical reasons.
+Project content lives in `app/data/posts.json`. Presentation metadata and
+case-study highlights live in `app/data/projects.ts`.

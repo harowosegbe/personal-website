@@ -1,7 +1,7 @@
 {
-  "name": "rauchg-blog",
+  "name": "hammed-arowosegbe-portfolio",
   "license": "MIT",
-  "description": "rauchg.com (blog)",
+  "description": "Portfolio and case-study archive for Hammed Arowosegbe",
   "dependencies": {
     "@fontsource/inter": "^4.5.15",
     "@fontsource/roboto-mono": "^4.5.10",

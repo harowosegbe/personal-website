@@ -1,40 +1,61 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { ThemeToggle } from "./theme-toggle";
 import { Logo } from "./logo";
 
 export function Header() {
+  const pathname = usePathname();
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-50/80 dark:bg-[#111]/80 backdrop-blur-md border-b border-gray-200/60 dark:border-gray-800/60">
-      <div className="max-w-3xl mx-auto px-4 py-4 flex items-center">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-200/80 bg-[#fcfcfc]/85 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-[#111]/85">
+      <div className="mx-auto flex h-16 max-w-6xl items-center px-5 md:px-8">
         <Logo />
 
-        <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3 font-medium">
-          <ThemeToggle />
-
+        <nav
+          aria-label="Primary navigation"
+          className="ml-auto flex items-center gap-0.5 font-mono text-[11px] font-medium sm:gap-1"
+        >
+          <Link
+            href="/#work"
+            className="hidden rounded-md px-3 py-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 sm:inline-flex"
+          >
+            Work
+          </Link>
           <Link
             href="/about"
-            className="inline-flex hover:bg-gray-200/50 dark:hover:bg-[#313131]/50 active:bg-gray-300/50 dark:active:bg-[#242424]/50 rounded-md px-3 py-2 transition-colors"
+            aria-current={pathname === "/about" ? "page" : undefined}
+            className="inline-flex rounded-md px-3 py-2 transition-colors hover:bg-zinc-100 aria-[current=page]:bg-zinc-100 dark:hover:bg-zinc-900 dark:aria-[current=page]:bg-zinc-900"
           >
             About
           </Link>
           <a
+            href="mailto:arowosegbe.hammed.olawale@gmail.com"
+            className="hidden rounded-md px-3 py-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 md:inline-flex"
+          >
+            Contact
+          </a>
+
+          <ThemeToggle />
+
+          <a
             href="https://x.com/HammedArrow"
             target="_blank"
-            className="inline-flex hover:bg-gray-200/50 dark:hover:bg-[#313131]/50 active:bg-gray-300/50 dark:active:bg-[#242424]/50 items-center px-3 py-2 rounded-md transition-colors whitespace-nowrap"
+            rel="noopener noreferrer"
+            aria-label="Hammed Arowosegbe on X (opens in a new tab)"
+            className="hidden items-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 sm:inline-flex"
           >
-            <TweetIcon className="mr-0 md:mr-2" />
-            <span className="hidden md:inline">Follow me</span>
+            <TweetIcon aria-hidden="true" />
           </a>
           <a
             href="https://www.linkedin.com/in/hammed-arowosegbe/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex hover:bg-gray-200/50 dark:hover:bg-[#313131]/50 active:bg-gray-300/50 dark:active:bg-[#242424]/50 items-center px-3 py-2 rounded-md transition-colors"
+            aria-label="Hammed Arowosegbe on LinkedIn (opens in a new tab)"
+            className="hidden items-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 sm:inline-flex"
           >
-            <LinkedInIcon className="mr-0 md:mr-2" />
-            <span className="hidden md:inline">LinkedIn</span>
+            <LinkedInIcon aria-hidden="true" />
           </a>
         </nav>
       </div>

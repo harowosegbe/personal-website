@@ -5,15 +5,19 @@ import Link from "next/link";
 export function Logo() {
   const pathname = usePathname();
   return (
-    <span className="text-sm md:text-lg whitespace-nowrap font-bold font-mono">
+    <span className="whitespace-nowrap font-mono text-xs font-semibold tracking-[-0.02em] sm:text-sm">
       {pathname === "/" ? (
-        <span className="cursor-default pr-2">Hammed Arowosegbe</span>
+        <span className="cursor-default">
+          <span className="sm:hidden">Hammed A.</span>
+          <span className="hidden sm:inline">Hammed Arowosegbe</span>
+        </span>
       ) : (
         <Link
           href="/"
-          className="hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] p-2 rounded-sm -ml-2 transition-[background-color]"
+          className="-ml-2 rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900"
         >
-          Hammed Arowosegbe
+          <span className="sm:hidden">Hammed A.</span>
+          <span className="hidden sm:inline">Hammed Arowosegbe</span>
         </Link>
       )}
     </span>

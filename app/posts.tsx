@@ -2,131 +2,103 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Suspense } from "react";
-import posts from "./data/posts.json";
+import { projects, type Project } from "./data/projects";
 
-type SortSetting = ["date" | "views", "desc" | "asc"];
-
-interface Post {
-  id: string;
-  date: string;
-  title: string;
-  summary: string;
-  technologies: string[];
-  duration: string;
-}
+type SortSetting = ["date", "desc" | "asc"];
 
 export function Posts() {
   const [sort, setSort] = useState<SortSetting>(["date", "desc"]);
 
   function sortDate() {
-    setSort(sort => [
-      "date",
-      sort[0] !== "date" || sort[1] === "asc" ? "desc" : "asc",
-    ]);
+    setSort(current => ["date", current[1] === "desc" ? "asc" : "desc"]);
   }
 
   return (
-    <Suspense fallback={null}>
-      <main className="max-w-3xl font-mono m-auto mb-10 text-sm">
-        <header className="text-gray-500 dark:text-gray-600 flex items-center text-xs mb-4">
+    <section
+      id="archive"
+      aria-labelledby="archive-title"
+      className="border-t border-zinc-200 dark:border-zinc-800"
+    >
+      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+              03 / Archive
+            </p>
+            <h2
+              id="archive-title"
+              className="text-3xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white md:text-4xl"
+            >
+              Project index
+            </h2>
+          </div>
           <button
             onClick={sortDate}
-            className={`w-12 h-9 text-left  ${
-              sort[0] === "date" && sort[1] !== "desc"
-                ? "text-gray-700 dark:text-gray-400"
-                : ""
+            aria-label={`Sort projects by date ${
+              sort[1] === "desc" ? "ascending" : "descending"
             }`}
+            className="rounded-sm border border-zinc-300 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600 transition-colors hover:border-zinc-950 hover:text-zinc-950 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-white dark:hover:text-white"
           >
-            date
-            {sort[0] === "date" && sort[1] === "asc" && "↑"}
+            Date {sort[1] === "desc" ? "↓" : "↑"}
           </button>
-          <span className="grow pl-2">title</span>
-        </header>
+        </div>
 
-        <List posts={posts.posts} sort={sort} />
-      </main>
-    </Suspense>
+        <ProjectList posts={projects} sort={sort} />
+      </div>
+    </section>
   );
 }
 
 function formatDate(dateString: string) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
+  return new Date(dateString).toLocaleDateString("en-GB", {
     year: "numeric",
-    month: "long",
+    month: "short",
   });
 }
 
-function List({ posts, sort }: { posts: Post[]; sort: SortSetting }) {
+function ProjectList({ posts, sort }: { posts: Project[]; sort: SortSetting }) {
   const sortedPosts = useMemo(() => {
-    const [sortKey, sortDirection] = sort;
     return [...posts].sort((a, b) => {
-      if (sortKey === "date") {
-        return sortDirection === "desc"
-          ? new Date(b.date).getTime() - new Date(a.date).getTime()
-          : new Date(a.date).getTime() - new Date(b.date).getTime();
-      }
-      return 0;
+      return sort[1] === "desc"
+        ? new Date(b.date).getTime() - new Date(a.date).getTime()
+        : new Date(a.date).getTime() - new Date(b.date).getTime();
     });
   }, [posts, sort]);
 
   return (
-    <ul>
-      {sortedPosts.map((post, i: number) => {
-        const year = getYear(post.date);
+    <ul className="border-t border-zinc-200 dark:border-zinc-800">
+      {sortedPosts.map((post, index) => {
+        const year = new Date(post.date).getFullYear();
         const firstOfYear =
-          !sortedPosts[i - 1] || getYear(sortedPosts[i - 1].date) !== year;
-        const lastOfYear =
-          !sortedPosts[i + 1] || getYear(sortedPosts[i + 1].date) !== year;
+          !sortedPosts[index - 1] ||
+          new Date(sortedPosts[index - 1].date).getFullYear() !== year;
 
         return (
           <li key={post.id}>
-            <Link href={`/post/${post.id}`}>
+            <Link
+              href={`/post/${post.id}`}
+              className="group grid gap-4 border-b border-zinc-200 py-6 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900/60 sm:-mx-3 sm:grid-cols-[4rem_minmax(0,1fr)_12rem_1.5rem] sm:items-start sm:px-3"
+            >
+              <span className="font-mono text-xs text-zinc-500">
+                {firstOfYear ? year : "·"}
+              </span>
+              <div>
+                <h3 className="text-base font-semibold tracking-[-0.015em] text-zinc-900 transition-colors group-hover:text-black dark:text-zinc-100 dark:group-hover:text-white md:text-lg">
+                  {post.title}
+                </h3>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                  {post.summary}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[10px] uppercase leading-5 tracking-[0.08em] text-zinc-500 sm:block">
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
+                <span className="sm:block">{post.category}</span>
+              </div>
               <span
-                className={`group flex transition-[background-color] hover:bg-gray-50/50 dark:hover:bg-[#202020] active:bg-gray-100 dark:active:bg-[#222] border-y border-gray-200 dark:border-[#313131]
-                ${!firstOfYear ? "border-t-0" : ""}
-                ${lastOfYear ? "border-b-0" : ""}
-              `}
+                aria-hidden="true"
+                className="hidden transition-transform group-hover:translate-x-1 sm:block"
               >
-                <span
-                  className={`py-6 flex grow items-start ${
-                    !firstOfYear ? "ml-14" : ""
-                  }`}
-                >
-                  {firstOfYear && (
-                    <span className="w-14 inline-block self-start shrink-0 text-gray-500 dark:text-gray-500 pt-1 font-mono text-xs">
-                      {year}
-                    </span>
-                  )}
-                  <div className="grow">
-                    <h2 className="text-[1.1rem] font-semibold text-gray-800 dark:text-gray-100 mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">
-                      {post.summary}
-                    </p>
-                    <div className="flex items-center gap-3 text-xs font-mono text-gray-500 dark:text-gray-500 mb-3 uppercase tracking-wide">
-                      <time dateTime={post.date}>{formatDate(post.date)}</time>
-                      <span className="text-gray-300 dark:text-gray-700">
-                        |
-                      </span>
-                      <span>{post.duration}</span>
-                    </div>
-                    {post.technologies && (
-                      <div className="flex flex-wrap gap-2">
-                        {post.technologies.map(tech => (
-                          <span
-                            key={tech}
-                            className="inline-flex items-center h-5 px-2 text-[10px] leading-none font-medium border border-gray-200/60 dark:border-gray-700/60 bg-gray-50/50 dark:bg-zinc-800/50 text-gray-600 dark:text-gray-400 rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </span>
+                →
               </span>
             </Link>
           </li>
@@ -134,8 +106,4 @@ function List({ posts, sort }: { posts: Post[]; sort: SortSetting }) {
       })}
     </ul>
   );
-}
-
-function getYear(date: string) {
-  return new Date(date).getFullYear();
 }
