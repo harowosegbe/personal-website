@@ -68,12 +68,12 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-8 sm:grid-cols-[minmax(0,1fr)_10rem] sm:items-end">
           <div>
             <h1 className="text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-zinc-950 dark:text-white sm:text-5xl md:text-6xl">
-              I work where software meets the physical world.
+              I build 3D software and immersive systems.
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              I&apos;m Hammed Arowosegbe, a senior 3D and XR engineer. I design
-              and build browser-based 3D tools, immersive simulations and
-              interactive installations.
+              For over eight years, I&apos;ve taken browser-based 3D tools, CAD
+              platforms, immersive simulations and interactive installations
+              from early architecture through to production.
             </p>
           </div>
 
